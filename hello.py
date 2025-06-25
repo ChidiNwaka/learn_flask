@@ -10,7 +10,6 @@ def generate_uuid() -> str:
 
 @app.before_request
 def assign_uuid():
-    print("calling the assign_uuid function first")
     if 'uuid' not in session:
         session['uuid'] = generate_uuid()
     g.uuid = session['uuid']
